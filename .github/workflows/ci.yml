@@ -37,5 +37,8 @@ jobs:
       - run: npm ci
       - run: npm run types:check
       - run: npx vp lint
+      # Vitest поднимает Vite в dev-режиме, а laravel-vite-plugin в CI это по умолчанию запрещает
       - run: npm test
+        env:
+          LARAVEL_BYPASS_ENV_CHECK: 1
       - run: npm run build
