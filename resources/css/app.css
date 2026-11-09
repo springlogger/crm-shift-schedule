@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@source "../views";
+
+@theme {
+  --font-sans: "Manrope Variable", "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --text-title-2xl: 32px;
+  --text-title-2xl--line-height: 32px;
+  --text-title-2xl--letter-spacing: -1px;
+  --text-title-2xl--font-weight: 500;
+  --text-m: 16px;
+  --text-m--line-height: 24px;
+  --text-caption-s: 14px;
+  --text-caption-s--line-height: 20px;
+  --text-caption-xs: 12px;
+  --text-caption-xs--line-height: 16px;
+  --text-headline-l: 20px;
+  --text-headline-l--line-height: 24px;
+  --text-headline-l--font-weight: 600;
+  --text-headline-l--letter-spacing: -0.3px;
+
+  /* Radius/M из Figma = 8px. Остальные имена мои: «s» и «l» не годятся, rounded-s / rounded-l уже заняты утилитами сторон */
+  --radius-xs: 4px;
+  --radius-m: 8px;
+  --radius-tab: 10px;
+  --radius-xl: 12px;
+
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-brand-0: #e8edfc;
+  --color-brand-2: #bbc9f7;
+  --color-brand-5: #5b7dec;
+  --color-indigo-20: #e9deff;
+  --color-indigo-30: #c8adff;
+  --color-mint-12: #e0f8f7;
+  --color-mint-30: #b2eeeb;
+
+  --color-info: #3e87ff;
+  --color-danger: #dc2626;
+  --color-lavanda-text: #8040ff;
+  /* В выгрузке у mint-чипа нет цвета часов — это догадка, проверь в Figma */
+  --color-mint-text: #1fa39b;
+
+  --color-backgrounds-primary: #ffffff;
+  --color-backgrounds-secondary: #f8f9fb;
+  --color-backgrounds-tertiary: #e7e8ee;
+  --color-backgrounds-quaternary: #f2f3f7;
+  --color-backgrounds-neutral-primary-hover: #3c3c43;
+
+  --color-fills-brand-primary: #ebeffd;
+  --color-fills-info-primary: #e8f1ff;
+  --color-fills-danger-primary: #fbe5e5;
+
+  --color-border-neutral-subtle: #dedee3;
+  --color-border-neutral-strong: #bcbcc2;
+
+  --color-text-primary: #101012;
+  --color-text-secondary: #737378;
+  --color-text-disabled: #c1c1c3;
+  --color-text-on-primary-disabled: #c6c6cd;
+  --color-icon-secondary: #93939c;
+  --color-icon-tertiary: #707176;
+
+  --color-button-neutral-primary-bg-default: #242426;
+  --color-button-neutral-primary-bg-active: #595961;
+  --color-button-neutral-primary-bg-disable: #f2f3f7;
+  --color-button-neutral-secondary-bg-default: #f2f3f7;
+  --color-button-neutral-secondary-bg-hover: #e7e8ee;
+  --color-button-neutral-secondary-bg-active: #cdcdd6;
+  --color-button-neutral-secondary-bg-disable: #f2f3f7;
+  --color-button-neutral-tertiary-bg-hover: #f8f9fb;
+  --color-button-neutral-tertiary-bg-active: #e7e8ee;
+  --color-button-neutral-tertiary-border-default: #101012;
+  --color-button-neutral-tertiary-border-disable: #bcbcc2;
+  --color-button-neutral-quaternary-bg-hover: #f8f9fb;
+  --color-button-neutral-quaternary-bg-active: #e7e8ee;
+  --color-button-neutral-quaternary-border-default: #dedee3;
+  --color-button-neutral-quinary-bg-default: #ffffff;
+  --color-button-neutral-quinary-bg-hover: #e7e8ee;
+  --color-button-neutral-quinary-bg-active: #cdcdd6;
+
+  --color-button-brand-primary-bg-hover: #1c4ae5;
+  --color-button-brand-primary-bg-active: #163bb7;
+  --color-button-brand-primary-bg-disable: #f2f3f7;
+  --color-button-brand-secondary-bg-hover: #d2dbfa;
+  --color-button-brand-secondary-bg-disable: #f2f3f7;
+  --color-button-brand-tertiary-border-disable: #bcbcc2;
+}
+
+@theme inline {
+  --color-border-brand-strong: var(--color-brand-5);
+
+  --color-button-neutral-primary-bg-hover: var(--color-backgrounds-neutral-primary-hover);
+  --color-button-brand-primary-bg-default: var(--color-brand-5);
+  --color-button-brand-secondary-bg-default: var(--color-brand-0);
+  --color-button-brand-secondary-bg-active: var(--color-brand-2);
+  --color-button-brand-tertiary-bg-hover: var(--color-brand-0);
+  --color-button-brand-tertiary-bg-active: var(--color-button-brand-secondary-bg-hover);
+  --color-button-brand-tertiary-border-default: var(--color-brand-5);
+  --color-button-brand-label: var(--color-button-brand-primary-bg-hover);
+}
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-border-neutral-subtle);
+  }
+
+  html {
+    color: var(--color-text-primary);
+    background-color: var(--color-backgrounds-quaternary);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    font-size: var(--text-m);
+    line-height: var(--text-m--line-height);
+    background-color: var(--color-backgrounds-quaternary);
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
